@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Main{
+    public static double avg(int[] arr){
+        int sz = arr.length, sum = 0;
+        for (int i : arr) sum += i;
+        return (double) sum / sz;
+    }
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the size of the array: ");
+        int sz = scanner.nextInt();
+        int[] array = new int[sz];
+        for(int i=0;i<sz;i++){
+            array[i] = scanner.nextInt();
+        }
+        System.out.println("Average of the array elements: " + avg(array));
+    }
+}

@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Main{
+    public static boolean isArmstrongNumber(int number){
+        int digit, sum = 0, cNumber = number;
+        while(number != 0){
+            digit = number % 10;
+            sum += (digit * digit * digit);
+            number /= 10;
+        }
+        return sum == cNumber;
+    }
+
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number: ");
+        int number = scanner.nextInt();
+        if(isArmstrongNumber(number)) System.out.println(number + " is Armstrong Number");
+        else System.out.println(number + " isn't Armstrong Number");
+    }
+}

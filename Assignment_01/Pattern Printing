@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the level of the pyramid: ");
+        int level = scanner.nextInt();
+        for(int i=1;i<=level;i++){
+            int space = level - i;
+            while(space > 0) {
+                System.out.print(" ");
+                space--;
+            }
+            int star = i;
+            while(star > 0){
+                System.out.print("* ");
+                star--;
+            }
+            System.out.println("");
+        }
+    }
+}

@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main{
+    public static boolean isExist(int[] arr, int target){
+        int sz = arr.length;
+        int L = 0, R = sz - 1, M;
+        while(L <= R){
+            M = L + (R - L + 1) / 2;
+            if(arr[M] == target) return true;
+            else if(arr[M] > target) R = M - 1;
+            else L = M + 1;
+        }
+        return false;
+    }
+
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the size of the array: ");
+        int sz = scanner.nextInt();
+        int[] array = new int[sz];
+        System.out.println("Enter a sorted array");
+        for(int i=0;i<sz;i++){
+            array[i] = scanner.nextInt();
+        }
+        System.out.println("Enter the target");
+        int target = scanner.nextInt();
+        if(isExist(array, target)) System.out.println(target + " found");
+        else System.out.println(target + " not found");
+    }
+}

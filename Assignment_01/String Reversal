@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class Main{
+    public static StringBuilder strReverse(String str){
+        StringBuilder rstr = new StringBuilder();
+        for(int i=str.length()-1;i>=0;i--){
+            rstr.append(str.charAt(i));
+        }
+        return rstr;
+    }
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the string: ");
+        String str = scanner.next();
+        System.out.println("Reverse String: " + strReverse(str));
+    }
+}
